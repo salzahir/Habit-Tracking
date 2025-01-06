@@ -11,39 +11,52 @@ struct ContentView: View {
     @ObservedObject private var activityStore = ActivityStore()
     @State var isAdding : Bool = false
     var body: some View {
-        
         NavigationStack{
-            List(activityStore.activities, id: \.id ) { activity in
-                    NavigationLink{
-                        DetailView(activity: activity)
-                    } label: {
-                        Text(activity.title)
-                    }
-                }
-                .sheet(isPresented: $isAdding){
-                    AddActivityView(activityStore: activityStore, isAdding: $isAdding)
-                }
-                .navigationTitle("Habit Tracking")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button(action: {isAdding.toggle()}) {
-                            Image(systemName: "plus.circle")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 30, height: 30)
-                                .foregroundColor(Color.blue)
+            ZStack{
+                Color.teal
+                    .ignoresSafeArea()
+                List(activityStore.activities, id: \.id ) { activity in
+                        NavigationLink{
+                            DetailView(activity: activity)
+                        } label: {
+                            Text(activity.title)
+                                .padding()
+                                .foregroundStyle(.black)
                         }
                     }
-                }
-                .padding()
+                    .sheet(isPresented: $isAdding){
+                        AddActivityView(
+                            activityStore: activityStore,
+                            isAdding: $isAdding
+                        )
+                    }
+                    .navigationTitle("Habit Tracking")
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar{
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Button(action: {isAdding.toggle()}) {
+                                Image(systemName: "plus.circle")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 30, height: 30)
+                                    .foregroundColor(Color.blue)
+                            }
+                        }
+                    }
+                    .padding()
             }
         }
-
     }
+}
 
-
-
+struct DetailView: View {
+    var activity: Activity
+    
+    var body: some View {
+        Text(activity.title)
+        Text(activity.description)
+    }
+}
 struct Activity: Identifiable, Codable, Equatable {
     var id = UUID()
     var title: String
@@ -56,14 +69,6 @@ class ActivityStore: ObservableObject {
     
 }
 
-struct DetailView: View {
-    var activity: Activity
-    
-    var body: some View {
-        Text(activity.title)
-        Text(activity.description)
-    }
-}
 
 struct AddActivityView: View {
     
@@ -102,7 +107,6 @@ struct AddActivityView: View {
                         description: description
                     ))
                     isAdding.toggle() })
-
         }
     }
 }
