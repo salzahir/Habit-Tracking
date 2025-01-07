@@ -1,28 +1,27 @@
-# Habit-Tracking App
+# **Momentum - Habit-Tracking App**
 
-## Overview
+## **Overview**
+Momentum helps users build and track habits by logging activities and tracking completion counts. It provides a simple interface to manage daily habits, with persistence handled by `UserDefaults`. Ideal for users who want to track their habits and stay motivated.
 
-The Habit-Tracking app helps users track their activities and increment the number of times they complete a habit. It supports adding new activities, viewing activity details, and persists data using `UserDefaults`.
+## **Features**
 
-## Features
+- **Add New Activity:** Add any habit you'd like to track.
+- **Increment Completion Count:** Track progress by incrementing the completion count each time you accomplish a habit.
+- **Persistent Storage:** Data is saved locally via `UserDefaults`, ensuring that your habit data is preserved across app restarts.
 
-- **Add New Activity**: Users can add new habits to track.
-- **Increment Completion Count**: Users can increment the completion count for each activity.
-- **Persistent Storage**: Activities are saved to `UserDefaults` and loaded on app startup.
-
-## How to Run the App
+## **How to Run the App**
 
 1. Clone this repository or open the project in Xcode.
-2. Ensure you have the required version of Xcode and Swift tools.
+2. Ensure you have Xcode 12.0 or later installed.
 3. Build and run the app on an iOS simulator or real device.
 
-## Requirements
+## **Requirements**
 
 - Xcode 12.0 or later
 - iOS 14.0 or later
 
-## Features to Add
+## **Features to Add**
 
-- User authentication (log in to save data to a cloud service like Firebase or CoreData).
-- Notifications for habit completion.
-- Analytics to track progress over time (e.g., streaks).
+- **User Authentication:** Enable users to log in and save their habit data to the cloud using Firebase or CoreData.
+- **Notifications:** Set reminders for habit completion.
+- **Analytics:** Track long-term progress, streaks, and habit trends.
