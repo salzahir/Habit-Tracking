@@ -17,7 +17,7 @@ struct ContentView: View {
                     .ignoresSafeArea()
                 List(activityStore.activities, id: \.id ) { activity in
                         NavigationLink{
-                            DetailView(activity: activity)
+                            DetailView(activityStore: activityStore, activity: activity)
                         } label: {
                             Text(activity.title)
                                 .padding()
@@ -46,15 +46,31 @@ struct ContentView: View {
                     .padding()
             }
         }
+        .onAppear{
+            activityStore.loadHabits()
+        }
     }
 }
 
 struct DetailView: View {
+    @ObservedObject var activityStore: ActivityStore
     var activity: Activity
     
     var body: some View {
         Text(activity.title)
         Text(activity.description)
+        Text("Completed \(activity.completionCount) times")
+        Button("Increment Completion Count") {
+            incrementCompletionCount()
+        }
+    }
+    
+    func incrementCompletionCount() {
+        if let index = activityStore.activities.firstIndex(of: activity) {
+            var updatedActivity = activityStore.activities[index]
+            updatedActivity.completionCount += 1
+            activityStore.activities[index] = updatedActivity
+        }
     }
 }
 struct Activity: Identifiable, Codable, Equatable {
@@ -65,10 +81,29 @@ struct Activity: Identifiable, Codable, Equatable {
 }
 
 class ActivityStore: ObservableObject {
-    @Published var activities: [Activity] = []
+    @Published var activities: [Activity] = [] {
+        didSet {
+            saveHabits()
+        }
+    }
     
+    func saveHabits() {
+        
+        if let savedHabits = try? JSONEncoder().encode(activities) {
+            UserDefaults.standard.set(savedHabits, forKey: "habits")
+        }
+        
+    }
+    func loadHabits() {
+        if let loadedHabits = UserDefaults.standard.data(forKey: "habits"){
+            let decoder = JSONDecoder()
+            if let decodedHabits = try? decoder.decode([Activity].self, from: loadedHabits) {
+                activities = decodedHabits
+            }
+        }
+    }
+            
 }
-
 
 struct AddActivityView: View {
     
