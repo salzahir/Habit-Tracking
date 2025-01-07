@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		364B5DF32D2B400B00FA1132 /* Habit-Tracking.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Habit-Tracking.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		364B5DF32D2B400B00FA1132 /* Momentum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Momentum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		364B5DF52D2B400B00FA1132 /* Habit-Tracking */ = {
+		364B5DF52D2B400B00FA1132 /* Momentum */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Habit-Tracking";
+			path = Momentum;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -32,7 +32,7 @@
 		364B5DEA2D2B400B00FA1132 = {
 			isa = PBXGroup;
 			children = (
-				364B5DF52D2B400B00FA1132 /* Habit-Tracking */,
+				364B5DF52D2B400B00FA1132 /* Momentum */,
 				364B5DF42D2B400B00FA1132 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +40,7 @@
 		364B5DF42D2B400B00FA1132 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				364B5DF32D2B400B00FA1132 /* Habit-Tracking.app */,
+				364B5DF32D2B400B00FA1132 /* Momentum.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,9 +48,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		364B5DF22D2B400B00FA1132 /* Habit-Tracking */ = {
+		364B5DF22D2B400B00FA1132 /* Momentum */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 364B5E012D2B400D00FA1132 /* Build configuration list for PBXNativeTarget "Habit-Tracking" */;
+			buildConfigurationList = 364B5E012D2B400D00FA1132 /* Build configuration list for PBXNativeTarget "Momentum" */;
 			buildPhases = (
 				364B5DEF2D2B400B00FA1132 /* Sources */,
 				364B5DF02D2B400B00FA1132 /* Frameworks */,
@@ -61,13 +61,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				364B5DF52D2B400B00FA1132 /* Habit-Tracking */,
+				364B5DF52D2B400B00FA1132 /* Momentum */,
 			);
-			name = "Habit-Tracking";
+			name = Momentum;
 			packageProductDependencies = (
 			);
 			productName = "Habit-Tracking";
-			productReference = 364B5DF32D2B400B00FA1132 /* Habit-Tracking.app */;
+			productReference = 364B5DF32D2B400B00FA1132 /* Momentum.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -85,7 +85,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 364B5DEE2D2B400B00FA1132 /* Build configuration list for PBXProject "Habit-Tracking" */;
+			buildConfigurationList = 364B5DEE2D2B400B00FA1132 /* Build configuration list for PBXProject "Momentum" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +99,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				364B5DF22D2B400B00FA1132 /* Habit-Tracking */,
+				364B5DF22D2B400B00FA1132 /* Momentum */,
 			);
 		};
 /* End PBXProject section */
@@ -303,7 +303,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		364B5DEE2D2B400B00FA1132 /* Build configuration list for PBXProject "Habit-Tracking" */ = {
+		364B5DEE2D2B400B00FA1132 /* Build configuration list for PBXProject "Momentum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				364B5DFF2D2B400D00FA1132 /* Debug */,
@@ -312,7 +312,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		364B5E012D2B400D00FA1132 /* Build configuration list for PBXNativeTarget "Habit-Tracking" */ = {
+		364B5E012D2B400D00FA1132 /* Build configuration list for PBXNativeTarget "Momentum" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				364B5E022D2B400D00FA1132 /* Debug */,
