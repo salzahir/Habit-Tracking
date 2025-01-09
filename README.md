@@ -20,6 +20,14 @@ Momentum helps users build and track habits by logging activities and tracking c
 - Xcode 12.0 or later
 - iOS 14.0 or later
 
+## **Images**
+
+- **App Icon:**  
+![App Icon](./Images/appIcon.png)
+
+- **Habit List View:**  
+![Habit List View](./Images/view.png)
+
 ## **Features to Add**
 
 - **User Authentication:** Enable users to log in and save their habit data to the cloud using Firebase or CoreData.

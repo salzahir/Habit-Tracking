@@ -13,8 +13,10 @@ struct ContentView: View {
     var body: some View {
         NavigationStack{
             ZStack{
-                Color.teal
-                    .ignoresSafeArea()
+                LinearGradient(gradient: Gradient(colors: [.red, .purple]),
+                               startPoint: .topLeading,
+                               endPoint: .bottomTrailing)
+                    .edgesIgnoringSafeArea(.all)
                 
                 ActivityListView(activityStore: activityStore)
                     .sheet(isPresented: $isAdding){
@@ -23,8 +25,7 @@ struct ContentView: View {
                             isAdding: $isAdding
                         )
                     }
-                    .navigationTitle("Habit Tracking")
-                    .navigationBarTitleDisplayMode(.inline)
+                    .navigationTitle("Habit Tracking")                    .navigationBarTitleDisplayMode(.inline)
                     .toolbar{
                         ToolbarItem(placement: .navigationBarTrailing) {
                             AddButton(isAdding: $isAdding)
