@@ -23,10 +23,10 @@ Momentum helps users build and track habits by logging activities and tracking c
 ## **Images**
 
 - **App Icon:**  
-![App Icon](./Images/appIcon.png)
+![App Icon](./images/appIcon.png)
 
 - **Habit List View:**  
-![Habit List View](./Images/view.png)
+![Habit List View](./images/view.png)
 
 ## **Features to Add**
 
