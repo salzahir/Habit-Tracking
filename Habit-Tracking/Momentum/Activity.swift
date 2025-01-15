@@ -12,4 +12,7 @@ struct Activity: Identifiable, Codable, Equatable {
     var title: String
     var description: String
     var completionCount: Int = 0
+    var category: ActivityCategory
 }
+
+

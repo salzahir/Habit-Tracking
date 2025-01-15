@@ -11,7 +11,8 @@ struct ActivityListView: View {
     @ObservedObject var activityStore: ActivityStore
     
     var body: some View {
-        List(activityStore.activities, id: \.id ) { activity in
+        List {
+            ForEach(activityStore.activities, id: \.id ) { activity in
                 NavigationLink{
                     DetailView(activityStore: activityStore, activity: activity)
                 } label: {
@@ -20,5 +21,8 @@ struct ActivityListView: View {
                         .foregroundStyle(.black)
                 }
             }
+            .onDelete(perform: activityStore.removeRows)
+        }
+        
     }
 }
