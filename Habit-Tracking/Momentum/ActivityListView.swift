@@ -14,7 +14,7 @@ struct ActivityListView: View {
         List {
             ForEach(activityStore.activities, id: \.id ) { activity in
                 NavigationLink{
-                    DetailView(activityStore: activityStore, activity: activity)
+                    HabitView(activityStore: activityStore, activity: activity)
                 } label: {
                     Text(activity.title)
                         .padding()
