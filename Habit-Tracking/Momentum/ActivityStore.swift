@@ -29,5 +29,9 @@ class ActivityStore: ObservableObject {
             }
         }
     }
+    
+    func removeRows(at offsets: IndexSet) {
+        activities.remove(atOffsets: offsets)
+    }
             
 }
