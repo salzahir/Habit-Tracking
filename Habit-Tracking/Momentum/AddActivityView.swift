@@ -7,17 +7,42 @@
 
 import SwiftUI
 
+enum AddActivityMode {
+    case add
+    case edit
+    
+    var title: String {
+        switch self {
+        case .add:
+            return "Add Activity"
+        case .edit:
+            return "Edit Activity"
+        }
+    }
+    
+    var cta: String {
+        switch self {
+        case .add:
+            return "Submit"
+            
+        case .edit:
+            return "Update"
+        }
+    }
+}
+
 struct AddActivityView: View {
     @ObservedObject var activityStore: ActivityStore
     @Environment(\.dismiss) var dismiss
     @Binding var isAdding: Bool
+    @Binding var mode: AddActivityMode
     @State var activityTitle: String = ""
     @State var description: String = ""
     @State var selectedCategory: ActivityCategory = .learning
     
     var body: some View {
         VStack(spacing: 20) {
-            Text("Add Activity")
+            Text(mode.title)
                 .font(.title)
                 .bold()
                 .fontWeight(.heavy)
@@ -44,7 +69,7 @@ struct AddActivityView: View {
             }
             
             HStack {
-                Button("Submit activity") {
+                Button(mode.cta) {
                     activityStore.activities.append(
                         Activity(
                             title: activityTitle,
